@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Teena! 🎂✨</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loader-screen" id="loaderScreen">
+    <div class="loader-content">
+      <div class="loader-heart">💖</div>
+      <p class="loader-text">Loading something special for Teena...</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- MUSIC -->
+  <button class="music-btn" id="musicBtn">🎵 Play Music</button>
+  <!-- id="bgMusic" matches what script.js expects -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="nastelbom-happy-birthday-469282.mp3" type="audio/mpeg" />
+    <source src="images/happy-birthday.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- CANVAS LAYERS -->
+  <canvas id="fireworksCanvas"></canvas>
+  <canvas id="starsCanvas"></canvas>
+  <canvas id="glitterCanvas"></canvas>
+
+  <!-- BALLOONS -->
+  <div id="balloonsContainer" class="balloons-container"></div>
+
+  <!-- HEARTS -->
+  <div id="heartsContainer" class="hearts-container"></div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="hero-content">
+      <p class="pre-title">✨ A Very Special Day ✨</p>
+      <h1 class="main-title">Happy Birthday</h1>
+      <div class="hero-photo-wrap">
+        <div class="photo-ring-outer"></div>
+        <div class="photo-ring"></div>
+        <img src="images/tina1.jpg" alt="Teena" class="hero-photo" />
+        <div class="photo-sparkles">
+          <span class="sp sp1">✨</span><span class="sp sp2">🌸</span>
+          <span class="sp sp3">💜</span><span class="sp sp4">⭐</span>
+          <span class="sp sp5">🌟</span><span class="sp sp6">💕</span>
+          <span class="sp sp7">🎀</span><span class="sp sp8">🦋</span>
+        </div>
+      </div>
+      <h2 class="name-title">Teena</h2>
+      <p class="hero-sub">Wishing you a day as magical as your smile 💖</p>
+      <div class="emoji-row">💕 &nbsp; 🌸 &nbsp; 💜 &nbsp; 🌟 &nbsp; 🎀 &nbsp; � &nbsp; 💕</div>
+      <div class="hero-badges">
+        <span class="badge">🎂 Birthday Girl</span>
+        <span class="badge">👑 Queen</span>
+        <span class="badge">� Beautiful Soul</span>
+      </div>
+    </div>
+    <a href="#countdown" class="scroll-arrow">&#8964;</a>
+  </section>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section class="section countdown-section reveal-section" id="countdown">
+    <div class="section-inner">
+      <h2 class="section-title">🎉 Birthday Countdown 🎉</h2>
+      <p class="countdown-msg" id="countdownMsg">🎀 Teena's Birthday — June 4, 2026 🎀</p>
+      <div class="countdown-grid">
+        <div class="count-box"><div class="count-inner"><span class="count-num" id="days">00</span><span class="count-lbl">Days</span></div></div>
+        <div class="count-sep">:</div>
+        <div class="count-box"><div class="count-inner"><span class="count-num" id="hours">00</span><span class="count-lbl">Hours</span></div></div>
+        <div class="count-sep">:</div>
+        <div class="count-box"><div class="count-inner"><span class="count-num" id="minutes">00</span><span class="count-lbl">Minutes</span></div></div>
+        <div class="count-sep">:</div>
+        <div class="count-box"><div class="count-inner"><span class="count-num" id="seconds">00</span><span class="count-lbl">Seconds</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CAKE ══ -->
+  <section class="section cake-section reveal-section" id="cake">
+    <div class="section-inner">
+      <h2 class="section-title">🎂 Make a Wish! 🎂</h2>
+      <div class="cake-scene">
+        <div class="candles-row">
+          <div class="candle c1"><div class="flame"><div class="inner-flame"></div></div></div>
+          <div class="candle c2"><div class="flame"><div class="inner-flame"></div></div></div>
+          <div class="candle c3"><div class="flame"><div class="inner-flame"></div></div></div>
+          <div class="candle c4"><div class="flame"><div class="inner-flame"></div></div></div>
+          <div class="candle c5"><div class="flame"><div class="inner-flame"></div></div></div>
+        </div>
+        <div class="cake">
+          <div class="cake-tier tier-top"><div class="icing-drip"></div><span class="cake-text">Happy Birthday 🌸</span></div>
+          <div class="cake-tier tier-mid"><span class="cake-deco">✨ Teena ✨</span></div>
+          <div class="cake-tier tier-bot"><div class="tier-hearts">💕 💜 💕</div></div>
+          <div class="cake-plate"></div>
+        </div>
+        <button class="blow-btn" id="blowBtn">🌬️ Blow Out the Candles!</button>
+        <p class="wish-msg" id="wishMsg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ══ -->
+  <section class="section gallery-section reveal-section" id="gallery">
+    <div class="section-inner">
+      <h2 class="section-title">📸 Beautiful Memories 📸</h2>
+      <p class="gallery-hint">✨ Click any photo to view it larger ✨</p>
+      <div class="gallery-grid">
+
+        <div class="gallery-card gc-tall" data-caption="Sunshine &amp; Stories ✨">
+          <img src="images/tina1.jpg" alt="Teena" />
+          <div class="card-overlay"><span>✨ Sunshine &amp; Stories</span></div>
+          <div class="card-badge">✨</div>
+        </div>
+
+        <div class="gallery-card" data-caption="Golden Hour Magic 🌅">
+          <img src="images/tina2.jpg" alt="Teena" />
+          <div class="card-overlay"><span>🌅 Golden Hour Magic</span></div>
+          <div class="card-badge">🌅</div>
+        </div>
+
+        <div class="gallery-card" data-caption="Jaipur Royalty 👑">
+          <img src="images/tina3.jpg" alt="Teena" />
+          <div class="card-overlay"><span>👑 Jaipur Royalty</span></div>
+          <div class="card-badge">�</div>
+        </div>
+
+        <div class="gallery-card gc-wide" data-caption="That Iconic Smile 😊💕">
+          <img src="images/tina4.jpg" alt="Teena" />
+          <div class="card-overlay"><span>😊 That Iconic Smile</span></div>
+          <div class="card-badge">�</div>
+        </div>
+
+        <div class="gallery-card" data-caption="Pure Joy �">
+          <img src="images/tee6.jpeg" alt="Teena" />
+          <div class="card-overlay"><span>💜 Pure Joy</span></div>
+          <div class="card-badge">💜</div>
+        </div>
+
+        <div class="gallery-card gc-tall" data-caption="Magical Moments �">
+          <img src="images/tee7.jpeg" alt="Teena" />
+          <div class="card-overlay"><span>🌟 Magical Moments</span></div>
+          <div class="card-badge">🌟</div>
+        </div>
+
+        <div class="gallery-card" data-caption="Always Gorgeous 🌸">
+          <img src="images/tee8.jpeg" alt="Teena" />
+          <div class="card-overlay"><span>🌸 Always Gorgeous</span></div>
+          <div class="card-badge">🌸</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox hidden" id="lightbox">
+    <div class="lb-backdrop"></div>
+    <button class="lb-close" id="lbClose">✕</button>
+    <div class="lb-body" id="lbBody"></div>
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+
+  <!-- ══ MESSAGE ══ -->
+  <section class="section message-section reveal-section" id="message">
+    <div class="section-inner">
+      <h2 class="section-title">💌 A Special Message 💌</h2>
+      <div class="message-card">
+        <div class="msg-photo-col">
+          <div class="msg-photo-frame">
+            <img src="images/tina1.jpg" alt="Teena" class="msg-photo" />
+          </div>
+          <p class="msg-name-tag">🌸 Teena 🌸</p>
+        </div>
+        <div class="msg-body">
+          <div class="msg-icon">💖</div>
+          <p class="msg-text">Dear <strong>Teena</strong>,</p>
+          <p class="msg-text">On this wonderful day, I want you to know how incredibly special you are. Your laughter is contagious, your kindness is boundless, and your smile lights up every room you walk into. 🌸</p>
+          <p class="msg-text">May this birthday bring you everything your heart desires — joy that never fades, love that grows stronger, and adventures that take your breath away. You deserve all the happiness in the world! 🌟</p>
+          <p class="msg-text">Here's to you, Teena — the most amazing person I know. Cheers to another year of being absolutely fabulous! 🥂✨</p>
+          <p class="msg-sig">With all my love, always 💜</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PHOTO CAROUSEL ══ -->
+  <section class="section carousel-section reveal-section" id="carousel">
+    <div class="section-inner">
+      <h2 class="section-title">🌸 Photo Moments 🌸</h2>
+      <p class="carousel-hint">✨ Swipe or use arrows to explore ✨</p>
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow" id="carouselPrev">&#8592;</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tina1.jpg" alt="Teena" /></div>
+              <p class="carousel-caption">✨ Sunshine &amp; Stories</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tina2.jpg" alt="Teena" /></div>
+              <p class="carousel-caption">🌅 Golden Hour Magic</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tina3.jpg" alt="Teena" /></div>
+              <p class="carousel-caption">👑 Jaipur Royalty</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tina4.jpg" alt="Teena" /></div>
+              <p class="carousel-caption">😊 That Iconic Smile</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tee6.jpeg" alt="Teena" /></div>
+              <p class="carousel-caption">💜 Pure Joy</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tee7.jpeg" alt="Teena" /></div>
+              <p class="carousel-caption">🌟 Magical Moments</p>
+            </div>
+            <div class="carousel-card">
+              <div class="carousel-img-wrap"><img src="images/tee8.jpeg" alt="Teena" /></div>
+              <p class="carousel-caption">🌸 Always Gorgeous</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow" id="carouselNext">&#8594;</button>
+      </div>
+      <div class="carousel-dots">
+        <span class="carousel-dot active" data-index="0"></span>
+        <span class="carousel-dot" data-index="1"></span>
+        <span class="carousel-dot" data-index="2"></span>
+        <span class="carousel-dot" data-index="3"></span>
+        <span class="carousel-dot" data-index="4"></span>
+        <span class="carousel-dot" data-index="5"></span>
+        <span class="carousel-dot" data-index="6"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LETTER ══ -->
+  <section class="section letter-section reveal-section" id="letter">
+    <div class="section-inner">
+      <h2 class="section-title">💌 A Letter For Teena 💌</h2>
+      <div class="letter-card">
+        <div class="letter-sparkles" id="letterSparkles"></div>
+        <div class="letter-paper">
+          <div class="letter-lines"></div>
+          <p class="letter-salutation">Dear Teena, 💜</p>
+          <div class="letter-body" id="letterBody"></div>
+          <div class="letter-signature">
+            <span class="sig-text" id="sigText"></span>
+            <div class="sig-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIDNIGHT SURPRISE POPUP -->
+  <div class="surprise-overlay hidden" id="surpriseOverlay">
+    <div class="surprise-modal">
+      <div class="surprise-glow-ring"></div>
+      <div class="surprise-confetti-wrap" id="surpriseConfetti"></div>
+      <div class="surprise-emoji">🎂</div>
+      <h2 class="surprise-title">Happy Birthday Teena! 🌸</h2>
+      <p class="surprise-sub">Today is your magical day! Wishing you all the joy, love, and sparkle the universe can hold. You deserve every beautiful thing! 💖</p>
+      <div class="surprise-hearts-row">💕 💜 🌸 ✨ 💗</div>
+      <button class="surprise-btn" id="surpriseBtn">Thank you! 🥰</button>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-balloons">🎈🎈🎈</div>
+    <p>Made with 💖 just for <strong>Teena</strong> &nbsp;·&nbsp; Happy Birthday! 🎂🎉</p>
+    <div class="footer-balloons">🎈🎈🎈</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
